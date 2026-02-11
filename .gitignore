@@ -1,0 +1,32 @@
+# macOS系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# 大型PDF文件（可选，如果不想上传大文件）
+# *.pdf
+
+# 临时文件
+*.tmp
+*.log
+*~
+
+# IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 编译文件
+build/
+install/
+log/
+*.o
+*.so
+
+# 其他
+*.tgz
+*.tar.gz
+
