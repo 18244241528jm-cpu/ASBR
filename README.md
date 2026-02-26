@@ -1,40 +1,58 @@
 # ASBR 课程资料
 
-Advanced Systems for Robotics (ASBR) 课程学习资料和作业解析
+Algorithms for Sensor-Based Robotics (ASBR) 课程学习资料与作业解析
 
-## 📚 内容
+## 目录结构
 
-### 课程资料
-- Assignment 1 作业文档和解析
-- 手眼标定笔记
-- 相关PDF资料
+```
+ASBR/
+├── references/          参考书籍与教学大纲
+├── lectures/            每周讲义与阅读材料
+│   ├── week01/
+│   ├── week02/
+│   ├── week03/
+│   ├── week04/
+│   ├── week05/
+│   └── week07/
+├── assignments/         作业题目与解析
+│   ├── hw1/
+│   └── hw2/
+├── notes/               学习笔记与专题研究
+│   └── handeye/
+└── docs/                仓库使用文档
+```
 
-### 解析文档
-- `assignment1_section1_解析.md` - 第一部分：介绍和提交要求
-- `assignment1_section2_解析.md` - 第二部分：Ubuntu和ROS安装配置
-- `assignment1_section3_解析.md` - 第三部分：SBR包安装与GUI动画
-- `assignment1_section4-5_解析.md` - 第四、五部分：前向运动学与轨迹生成
-- `assignment1_section6-7_解析.md` - 第六、七部分：轨迹实现与提交要求
-- `handeye_notes.md` - 手眼标定与旋转矩阵指数映射笔记
+## 各目录说明
 
-## 🚀 快速开始
+### references/ — 参考书籍
+| 文件 | 说明 |
+|------|------|
+| `ASBR_syllabus.pdf` | 课程教学大纲 |
+| `Algorithms_for_Sensor-Based_Robotics.pdf` | 课程主教材 (CIRL) |
+| `Principles_of_Robot_Motion.pdf` | 机器人运动学参考 |
+| `PR_MIT_en.pdf` | MIT 机器人运动学参考 |
+| `handeye.pdf` | 手眼标定参考文献 |
 
-### 环境要求
+### lectures/ — 每周讲义
+按周组织的课堂讲义和补充阅读材料。
+
+### assignments/ — 作业
+- **hw1/**: Assignment 1 题目 PDF 及各节解析（`section*_解析.md`）
+- **hw2/**: Assignment 2 题目 PDF（463 / 663 两个版本）
+
+### notes/ — 学习笔记
+- **handeye/**: 手眼标定与旋转矩阵指数映射笔记、图片
+- `SE3_lecture_transcript.txt`: SE(3) 变换课堂记录
+
+### docs/ — 仓库文档
+GitHub 使用指南和 Git 推送命令参考。
+
+## 环境要求
+
 - Ubuntu 22.04
-- ROS2 Humble
+- ROS 2 Humble
 - C++ 编译环境
 
-### 使用说明
-详细说明请参考各解析文档。
-
-## 📝 笔记说明
-
-本仓库包含：
-- 课程作业解析
-- 数学推导笔记
-- 实现指南
-
-## ⚠️ 注意
+## 注意
 
 本仓库仅用于学习参考，请遵守学术诚信政策。
-

@@ -1,0 +1,1974 @@
+[Simon Leonard] 12:00:45
+Okay, so let's get back to where we were, um, last time when we left off, and by the way, I think my stylist actually should, uh, keep my stylus on hand.
+
+[Simon Leonard] 12:00:53
+Maybe for later on. Um… Uh, we were talking about homogeneous coordinates.
+
+[Simon Leonard] 12:01:00
+And these… I'm going to be going off the notes.
+
+[Simon Leonard] 12:01:03
+these are usually notes I would do on the board.
+
+[Simon Leonard] 12:01:06
+Now I'm gonna do them, uh, they're on… canvas. I'm just going to be using whatever is there.
+
+[Simon Leonard] 12:01:13
+Uh, the, uh… We were at the point where we were combining a rotation and a translation. So these are the kind of, like, where you have first… oh, by the way, remember this.
+
+[Simon Leonard] 12:01:23
+We first rotate. a point, like we have here, we first rotate it.
+
+[Simon Leonard] 12:01:30
+And then we translate the point. That's the order, and there's a big difference between rotation.
+
+[Simon Leonard] 12:01:36
+translation, as opposed to first translation and then rotating. That's the order we do here.
+
+[Simon Leonard] 12:01:40
+rotate, then translate. But, um, the one thing we were unhappy with is that… was the way this was written down.
+
+[Simon Leonard] 12:01:50
+And it's written as rotation and translation, but they're separate, and that is.
+
+[Simon Leonard] 12:01:57
+This is called, like, I find, uh, transformation here, where we have this annoying plus in the between here. We'd like to have this more as a linear term.
+
+[Simon Leonard] 12:02:05
+Where we have one matrix. And a vector, and that's it. And the price… and that's because it's convenient. And the price to pay for that convenience was to use.
+
+[Simon Leonard] 12:02:16
+is to use homogeneous coordinates. So, uh, now about this.
+
+[Simon Leonard] 12:02:25
+The price to pay, as I mentioned, is not a big deal, is just to say, well, we have points, we had PA points, we had X of A, Y, and A, B, and so we're just going to add a 1 to this. So there's, like, you know, just put up with it. It's not a big deal. Let's just add a third one.
+
+[Simon Leonard] 12:02:38
+It's always going to be 1. And then, to make things work.
+
+[Simon Leonard] 12:02:44
+We also, what we're going to do is we have now this transformation here.
+
+[Simon Leonard] 12:02:48
+Um, let me start to do some annotation. we have this transformation here, and we have the rotation part.
+
+[Simon Leonard] 12:02:56
+And then we have the translation part. Like this. And if you actually do.
+
+[Simon Leonard] 12:03:02
+The matrix vector multiplication, it all works out. You get cos times X.
+
+[Simon Leonard] 12:03:09
+plus minus signs times Y, plus translation times 1. Remember the translation that we added?
+
+[Simon Leonard] 12:03:16
+Well, now we have that… translation, and we multiply it by 1, so it just gets added.
+
+[Simon Leonard] 12:03:22
+Works out. Do the same thing now for the Y. We've got the, uh, sign.
+
+[Simon Leonard] 12:03:28
+times X, and B cost times Y, and then the TY, that's the translation along the Y axis, times 1, and it all works out. Now we get this kind of additional fluff at the bottom here.
+
+[Simon Leonard] 12:03:41
+That's not a big deal. That's an additional row, essentially, is that it's going to be the 0 times X, that's 0, 0 times Y, that's 0, and 1 times 1, which is 1. So we end up with a 1 here. So it actually works out.
+
+[Simon Leonard] 12:03:54
+The only thing now is that we've had packed this transformation.
+
+[Simon Leonard] 12:03:59
+in a single matrix, like this one here. And now we can actually write it.
+
+[Simon Leonard] 12:04:04
+the way that I've been saying, it's a much neater or cleaner way, which is now linear, where we have one vector.
+
+[Simon Leonard] 12:04:12
+It's a homogeneous vector, it has an extra value, that's no big deal, and it has now a matrix. Now, this matrix is a 3x3 matrix.
+
+[Simon Leonard] 12:04:20
+We used to have a 2x2 matrix plus a 2x1 vector for the translation. Now, everything has been packed up.
+
+[Simon Leonard] 12:04:28
+in a 3x3 matrix, sure, the bottom row is kind of, like, seems to be additional baggage, but it's not that of a big deal.
+
+[Simon Leonard] 12:04:36
+And it will… makes it very, very convenient. Okay, so that… and that's… that's all the… that was the only argument here, is, like, an act just to be able to achieve.
+
+[Simon Leonard] 12:04:48
+this form… Here, there's no more something plus a time multiplied by a point, there's no more plus something. That plus something has been buried inside.
+
+[Simon Leonard] 12:04:59
+That, uh, homogeneous… this is called a homogeneous transformation.
+
+[Simon Leonard] 12:05:04
+Now we can say, well, what about the inverse? I always say talk about the inverse, because the inverse is a very important thing. If you want to do the inverse, saying, like, you know, let's say, if I give you that transformation here, and that transformation, I still need to give you the same thing. I need to give you the rotation.
+
+[Simon Leonard] 12:05:19
+and the translation. And I'm also giving you the X and the Y.
+
+[Simon Leonard] 12:05:22
+And then you can fill up the zeros and the ones, like, now the last row, that stuff. I'll give you all that. You can give me the coordinates of that.
+
+[Simon Leonard] 12:05:30
+point in frame B, now you can give it to me, that same point, but now the coordinates in frame A.
+
+[Simon Leonard] 12:05:35
+We don't really care about that one here, so you can get rid of it. If you only care about the X and Y, that's fine, just keep that part, it's not a big deal.
+
+[Simon Leonard] 12:05:43
+But now what about the inverse? It says, okay, now I'm not going to give you that PB here, I'm going to give you PA instead.
+
+[Simon Leonard] 12:05:50
+Well, then you're going to take that point here, you're going to invert it, you're going to set it in the front here, and you're going to be solving. You're going to get this.
+
+[Simon Leonard] 12:05:57
+this equation here, where now you need to do the inverse of that.
+
+[Simon Leonard] 12:06:01
+transformation. Now, this is the kind of thing now, like, you know, doing now, this is a 3x3 matrix.
+
+[Simon Leonard] 12:06:06
+If this would be… an arbitrary 3x3 matrix, and you want to invert a 3x3 matrix, now that gets a bit more messing up, because now this is where you've got the start.
+
+[Simon Leonard] 12:06:22
+Um, maybe solving the system of linear equation, you need to invert the matrix. Now, a 3x3 matrix is where you need to get into the cofactor stuff, that takes a bit more time, maybe.
+
+[Simon Leonard] 12:06:31
+you want to consider LU factor, kind of stuff that gets a bit more.
+
+[Simon Leonard] 12:06:35
+Ugly and messy. The good news is that you don't have to do any of that stuff.
+
+[Simon Leonard] 12:06:42
+Very easy. So if you want to invert that matrix here.
+
+[Simon Leonard] 12:06:46
+If you remember, if you… If you look at this… Let's go back here. I actually explicitly wrote.
+
+[Simon Leonard] 12:06:56
+When we did the inverse problem here, that was the inverse problem.
+
+[Simon Leonard] 12:07:00
+This is what we had here at the end.
+
+[Simon Leonard] 12:07:04
+You take point A. You multiply point A by the transpose.
+
+[Simon Leonard] 12:07:10
+of the rotation. this one here.
+
+[Simon Leonard] 12:07:17
+And then you have the translation part. You take the translation, and you multiply the translation by the inverse, by the transpose of the rotation matrix, put a minus sign in front. That's all you've got to do.
+
+[Simon Leonard] 12:07:29
+So, if you look at this one here, what do you do? You take a point.
+
+[Simon Leonard] 12:07:33
+You multiply it by a rotation matrix. Well, we've always… we've… that's what we've been doing all the time. We've done the same thing here.
+
+[Simon Leonard] 12:07:44
+That was point B. The only difference now is that we take point A, but we multiply it by the transpose of the rotation matrix. Instead of the rotation matrix itself.
+
+[Simon Leonard] 12:07:51
+And we were adding this translation here. Well, okay, that kind of has changed a little bit.
+
+[Simon Leonard] 12:07:57
+This is now the translation. Yeah, we still have that translation buried in here, but now we need to.
+
+[Simon Leonard] 12:08:03
+Multiply this by the. transport of the rotation matrix with a minus sign in front.
+
+[Simon Leonard] 12:08:10
+Okay, well, what's the big deal? It's not a big deal.
+
+[Simon Leonard] 12:08:13
+So, all we gotta do at this. point is we're gonna… Go back here, we're gonna come down here, we're gonna build… That inverse matrix, like we have here.
+
+[Simon Leonard] 12:08:27
+Exactly the way we have. We said, well, the point will need to be multiplied by that.
+
+[Simon Leonard] 12:08:33
+transpose of the rotation matrix. Well, there it is. We just did that.
+
+[Simon Leonard] 12:08:37
+And now we had this… translation here, that used to be the translation, like this one here, but now that's not the one here. We need to take that rotation matrix.
+
+[Simon Leonard] 12:08:47
+Take the transpose, put a minus sign. Well, let's just do that. What's the big deal? And now you have, essentially.
+
+[Simon Leonard] 12:08:54
+The inverse matrix. You don't need to do anything else. That's all it does. And that 0001 here will carry up just the same. So you can do this.
+
+[Simon Leonard] 12:09:03
+Exactly the same way we did it. before, pack up at 3x3, homogeneous matrix, transformation matrix, and that's it. You don't need to do any extra work, so… There is no need when you want to do this here, when you want to do that inverse, there is absolutely zero need for any heavy artillery.
+
+[Simon Leonard] 12:09:24
+Numerical methods for inverting matrices. It is a piece of cake.
+
+[Simon Leonard] 12:09:29
+You do a transpose that's as easy as it gets. This part here, it requires a little bit more work. It needs you to take the transpose of the matrix, multiply a vector, alright, big deal.
+
+[Simon Leonard] 12:09:40
+And put a minus sign to flip the signs of everything. That's all.
+
+[Simon Leonard] 12:09:44
+Okay, so this is the thing. So this is a very, very piece… easy, uh… very easy thing to do. Whenever you need to do it, and we will need to do this in a while. Okay.
+
+[Simon Leonard] 12:09:54
+Every once in a while. Alright, let's put this back now.
+
+[Simon Leonard] 12:09:58
+I cleared it up. Now… This here, what we've done.
+
+[Simon Leonard] 12:10:03
+Um, up to now, like, you were up to there.
+
+[Simon Leonard] 12:10:06
+was, uh, to combine, and I want to go back to this slide here, because it's… not to this slide, but this sheet here. What we've done here was to combine.
+
+[Simon Leonard] 12:10:15
+A rotation. with a translation. First rotate, then translate, then translate, remember that.
+
+[Simon Leonard] 12:10:22
+Whenever you put these two ingredients, consider them as ingredients. If you make a pizza, you need the dough, and you need some sauce, maybe cheese and stuff like that, but you need ingredients.
+
+[Simon Leonard] 12:10:32
+If you want to do a rigid body motion, you need ingredient, you need a rotation.
+
+[Simon Leonard] 12:10:38
+And you need a translation. But when you combine them together.
+
+[Simon Leonard] 12:10:42
+it makes a rigid body motion. This is called.
+
+[Simon Leonard] 12:10:47
+An S E. 2, in our case, because we were doing 2D.
+
+[Simon Leonard] 12:10:52
+So, and SEG stands for special Euclidean. 2D. The rotation part.
+
+[Simon Leonard] 12:11:02
+is an SO3. That's… the ingredient itself is a.
+
+[Simon Leonard] 12:11:05
+is a rotation. So if you… and a C2 is defined by what? It's defined by… you need.
+
+[Simon Leonard] 12:11:10
+two ingredients. You need a translation, and you need a rotation.
+
+[Simon Leonard] 12:11:15
+Okay, can you tell me more about these ingredients? Well, the translation is an element of R2, that's a 2D vector.
+
+[Simon Leonard] 12:11:22
+And the rotation is an element of an SO2, that's a rotation matrix, that's all there is.
+
+[Simon Leonard] 12:11:29
+Now, the important thing later is, like, one kind of mistake that this is really talking about what the ingredients are.
+
+[Simon Leonard] 12:11:37
+a translation and rotation, it doesn't tell you that.
+
+[Simon Leonard] 12:11:40
+The rotation and translation needs to be written in a homogeneous matrix.
+
+[Simon Leonard] 12:11:45
+Like this. It doesn't specify that. It just says you need a rotation, you need a translation.
+
+[Simon Leonard] 12:11:51
+Whether you decide to use the rotation and translation as a homogeneous.
+
+[Simon Leonard] 12:11:58
+rotation or transformation like this. Or as this kind of, like, straight-up equation that we have right here, that's perfectly, it doesn't really matter, okay?
+
+[Simon Leonard] 12:12:05
+It's not a, oh, you write it down on a piece of paper, it's just the ingredients themselves.
+
+[Simon Leonard] 12:12:12
+So, that's the… and I see this many multiple times.
+
+[Simon Leonard] 12:12:16
+Um, I think the one thing that kind of offended me the most was during, like, a GBO. These are the graduate board orgs for, like, PhD students. And they're asking, like, you know, can you tell me, like, what's the definition of SE3 or SE2?
+
+[Simon Leonard] 12:12:29
+And I remember the student writing down the. If, you know, 3x3 or 4x4 matrix. I was like, that's not exactly it, you know, it's really just about the translation and the.
+
+[Simon Leonard] 12:12:41
+rotations. It's not about how you write it down with a bunch of zeros at the end, and this goes here, and this goes there, with 001.
+
+[Simon Leonard] 12:12:49
+It has nothing to do with that. It has to do with the rotation and translation, how you decide to decide to combine them is really.
+
+[Simon Leonard] 12:12:56
+You know, it's more of a matter of, like, preferences at this point.
+
+[Simon Leonard] 12:13:00
+So just try to… make sure that, you know, you don't get these two mixed up.
+
+[Simon Leonard] 12:13:08
+Uh, the definition is really about what makes an SC2. It's a rotation and a translation. What makes a homogeneous transformation is you write the rotation here, you write the translation there, you write a bunch of zeros. Now, that's kind of extra stuff. That has nothing to do with SE2, how… what it makes an SE2 or SE3.
+
+[Simon Leonard] 12:13:26
+As we want to see, just try to keep these two.
+
+[Simon Leonard] 12:13:29
+concept a little bit separate. They're related, alright, but they're really kind of like, you know, there's no reason to start mixing.
+
+[Simon Leonard] 12:13:37
+Confused the definitions. That's the definition of a special Euclidean of Richard body motion in 2D.
+
+[Simon Leonard] 12:13:44
+Rotation and a translation. And SO2, and an R2, okay? Just want to make that, uh, clear.
+
+[Simon Leonard] 12:13:52
+Okay, um, and here's an example. So, um, I think it's the same, uh, example that, uh.
+
+[Simon Leonard] 12:14:02
+Or a similar example that we did. Um… Let's start. So, we have a translation.
+
+[Simon Leonard] 12:14:12
+translation from frame B to frame A. And there's also, and this is the translation between the two here.
+
+[Simon Leonard] 12:14:20
+And there's also a rotation. Um, that is, uh, given by an angle.
+
+[Simon Leonard] 12:14:27
+theta, and that angle theta is pi over 4.
+
+[Simon Leonard] 12:14:30
+Oh, okay. So, now I'm giving you the points, the coordinates of the point here is in frame B, so if you just look, if you block out frame A and you see frame B here, I'm giving you that the coordinates of the point is 2-0, that means that the.
+
+[Simon Leonard] 12:14:47
+X coordinate is 2. The Y coordinate is 0, so that will give us a point on the x-axis here. There is no Y, so that's it. So this is where the pointer, this is P.
+
+[Simon Leonard] 12:14:58
+And now I'm saying, well, now give me the coordinates of that same point, but in frame A.
+
+[Simon Leonard] 12:15:03
+All right, so then you just say, okay, well, all I've got to do here is to build this homogeneous.
+
+[Simon Leonard] 12:15:09
+transformation matrix, you're gonna put the rotation over here.
+
+[Simon Leonard] 12:15:13
+That's your… that's what your rotations are. So you plug in the ankle. You know the angle is pi over 4, and by the way.
+
+[Simon Leonard] 12:15:19
+this kind of pattern, this, uh, let me just go back here, actually, let me just put it here. This kind of rotation pattern here that you see, the rotation matrix with the cost minus sign, sine cost.
+
+[Simon Leonard] 12:15:30
+You have to learn that by art, all right? This is, like, you know, right off the bat, you… start to memorize this.
+
+[Simon Leonard] 12:15:38
+By heart, it's not that bad. cost minus sign, sign cost.
+
+[Simon Leonard] 12:15:44
+That pattern is used for a 2D rotation, and it's used quite a bit.
+
+[Simon Leonard] 12:15:50
+for 3D rotations. As well. So that's the thing. The other thing that I want to point out that I want you to learn by heart.
+
+[Simon Leonard] 12:15:57
+is how to invert. a matrix, so I just need to go back quickly here.
+
+[Simon Leonard] 12:16:04
+It's this part here. how to do this. This rotation transpose minus rotation transpose translation here.
+
+[Simon Leonard] 12:16:11
+This will save you a lot of time. You have to remember that by heart. Essentially, in Dell, you can always work that math that.
+
+[Simon Leonard] 12:16:19
+Sheila that we have up there. But this is… this is, you know.
+
+[Simon Leonard] 12:16:24
+this is kind of like… bread-and-butter robotic stuff. You have to learn this. If you ask, give me an inverse of a transformation.
+
+[Simon Leonard] 12:16:33
+rotation transpose. That's for the rotation part, minus rotation transpose translation, that's for the translation part. You don't… it should be, like, uh… It's an afterthought.
+
+[Simon Leonard] 12:16:42
+Okay. So let me just clean that up, and go back down here…
+
+[Simon Leonard] 12:16:51
+I'll try to line this up. Perfect. Okay. So now we've got all the ingredients. So you fill up all that stuff, that matrix here, that translation comes out right here, and that.
+
+[Simon Leonard] 12:17:02
+data comes all around here, and then you fill up that last row with 001, that's pretty easy. And the point.
+
+[Simon Leonard] 12:17:10
+is 2-0 comes right here. 2 and 0, that's our point, and that's it.
+
+[Simon Leonard] 12:17:14
+What you do then? You just turn the crank, just do the… perform the multiplications.
+
+[Simon Leonard] 12:17:19
+cost by over 4 times 2 minus sine pi over 4 times 0.
+
+[Simon Leonard] 12:17:24
+Minus 1 times 1, minus 1… put the number here, you got it. And then we perform that again. And this will give you PA. Now, PA, this is PA with a tile, meaning we get this annoying one here. We don't really care about the one.
+
+[Simon Leonard] 12:17:38
+If you want, you can get rid of it, so that now you just keep the top two values, and you get your point here, PA is 0.4142 for both X and Y. So these are now these two coordinates here.
+
+[Simon Leonard] 12:17:50
+This is what we get over here. That's it.
+
+[Simon Leonard] 12:17:52
+That is, uh, it's, uh, he… that… it's not easy.
+
+[Simon Leonard] 12:17:56
+So, Justin, remember, the rotation, where. where it goes and what it looks like.
+
+[Simon Leonard] 12:18:03
+Cost minus sign sign cost. translation right next to it.
+
+[Simon Leonard] 12:18:08
+Um, bunch of zeros and one, and then after that, it's all about crunching over. If I would have asked you to say, well, now, I'm gonna give you.
+
+[Simon Leonard] 12:18:16
+I'm going to give you this point here. I'll give you this transformation here.
+
+[Simon Leonard] 12:18:24
+can you give me back? PB. Well, now you would need to get that rotation here, perform the transpose.
+
+[Simon Leonard] 12:18:32
+So you're going to flip the rows. with the columns, and that translation here, you would take that same transpose rotation.
+
+[Simon Leonard] 12:18:40
+Multiply by minus 1, minus 1. put a minus sign to flip the signs of everything.
+
+[Simon Leonard] 12:18:45
+And you would get back to 0 for BB, the one at the end. Alright, so, and that always worked.
+
+[Simon Leonard] 12:18:51
+Okay. So this is what we have now. This is for… two-dimensional, rigid body motion.
+
+[Simon Leonard] 12:19:00
+Now, the 2D stuff is kind of lightweight. Most robots that we care of, robot arms, they work in 3D.
+
+[Simon Leonard] 12:19:08
+So we need to do the 3D. And that's what we're gonna do. The good news is that.
+
+[Simon Leonard] 12:19:14
+in 3D. Essentially, it's the same thing.
+
+[Simon Leonard] 12:19:18
+If you understand the 2D, how the 2D works.
+
+[Simon Leonard] 12:19:23
+There is absolutely no reason to not understand how the 3D works. It's just the same thing. As a matter of fact, my claim is that.
+
+[Simon Leonard] 12:19:31
+for a lot of these equations here that we're about to see.
+
+[Simon Leonard] 12:19:35
+I can show them to you. And you would have no idea whether I'm doing 2D or 3D.
+
+[Simon Leonard] 12:19:41
+They're that similar. in 3D, obviously, there's X, Y, and Z, and then in.
+
+[Simon Leonard] 12:19:47
+2D, there's only X and Y. Okay. So let's do the 3D. We're going to do this exact same pattern. First, we're going to look at 3D translations, then we're going to look at 3D rotations, then we're going to look at combining.
+
+[Simon Leonard] 12:19:57
+3D rigid body motion. Okay, so let's look at 3D translation. Now, first of all, as I said, we have X, Y, and Z.
+
+[Simon Leonard] 12:20:08
+there's a very important thing about that new kid on the block, the Z-axis.
+
+[Simon Leonard] 12:20:14
+If, I would say, um, here's an x-axis. And here is the y-axis.
+
+[Simon Leonard] 12:20:23
+Well, what's missing is the z-axis. Two things about that.
+
+[Simon Leonard] 12:20:27
+The z-axis needs to be perpendicular to the XY plane, so it means that you go either up.
+
+[Simon Leonard] 12:20:34
+Or it can go down. It can either go like this.
+
+[Simon Leonard] 12:20:38
+Or it can go like this. We have the choice. Actually, we do not have the choice.
+
+[Simon Leonard] 12:20:43
+What we have to enforce here is called the right-hand rule.
+
+[Simon Leonard] 12:20:48
+That is, if you take your hand, your right hand, and your fingers, your, like, you know, your forefingers like this.
+
+[Simon Leonard] 12:20:55
+Represent the direction of the x-axis. So my hand now would be pointing towards, I guess, the screen. That's where the x-axis is.
+
+[Simon Leonard] 12:21:03
+Now, the y-axis, in this case here, let's say that the y-axis points to.
+
+[Simon Leonard] 12:21:09
+My left. I would bend my finger towards the y-axis.
+
+[Simon Leonard] 12:21:14
+The y-axis go in that direction. If the y-axis would go in the other direction, I would need to flip my hand around, that is, X goes like this, now the Y goes in the other, but now I'm just going to do an x goes here, Y is in that direction, your direction of the thumb.
+
+[Simon Leonard] 12:21:29
+is going to be the z-axis. So my thumb points up. It's not pointing down.
+
+[Simon Leonard] 12:21:35
+So, that's the right-hand rule. That means that if your X is going here, the Y goes there, thumbs goes up.
+
+[Simon Leonard] 12:21:41
+This is this one here. This one is not going to be used. Do not ever use… if you would use the left hand.
+
+[Simon Leonard] 12:21:48
+Now, you would use the other way around. The thumb would be going down.
+
+[Simon Leonard] 12:21:52
+But we use the right-hand rule. That's what everybody does.
+
+[Simon Leonard] 12:21:56
+So, just remember that. Um, so we're gonna use… So if we have the x-axis here, the y-axis here.
+
+[Simon Leonard] 12:22:04
+Uh, the Z in this case will be pointing up.
+
+[Simon Leonard] 12:22:06
+And now we have a point. Now, the one thing I've got to say that's annoying with the 3D stuff is the drawing. It's very, very messy. Actually, let me try to zoom in here a little bit.
+
+[Simon Leonard] 12:22:15
+If I can… Yes, I can. There you go. Okay.
+
+[Simon Leonard] 12:22:22
+Actually, flip it out. Good, good, good. Okay.
+
+[Simon Leonard] 12:22:28
+Got this… Let's clean up… So now we have a point. The point is over here.
+
+[Simon Leonard] 12:22:36
+P. Without a frame. That point is useless.
+
+[Simon Leonard] 12:22:40
+But now we have a frame. Frame is frame A.
+
+[Simon Leonard] 12:22:43
+So that point will now have coordinates in. the X, Y, and Z frames. These are the 3 coordinates.
+
+[Simon Leonard] 12:22:52
+of that point in frame A. Now, are we going to have frame B?
+
+[Simon Leonard] 12:22:56
+Framebie is translated, that means you take all the axes and you shift along the X, the Y, and the Z, and here is frame B, it's down here.
+
+[Simon Leonard] 12:23:03
+And there's a translation. between these two frames.
+
+[Simon Leonard] 12:23:09
+That same point will have different coordinates. in frame B.
+
+[Simon Leonard] 12:23:16
+It's kind of hardier to Z-axis, because it's not long enough, but it's going to have different coordinates.
+
+[Simon Leonard] 12:23:21
+So if you have point A, you have the cornets in frame A, you have frame coordinates of the point in frame B.
+
+[Simon Leonard] 12:23:27
+How are they related together? Is that if you start, let's say, with your coordinates of frame B, you're going to be adding the translation, you're going to have now the coordinates of.
+
+[Simon Leonard] 12:23:37
+The point in framing. I've written this exact same equation for the 2D case.
+
+[Simon Leonard] 12:23:42
+If you're looking at it, there is no distinction whatsoever. In fact, as a matter of fact, I'm going to just close this up here.
+
+[Simon Leonard] 12:23:51
+I'm gonna say, just for the sake of… I've been seeing everybody here is that I've written this thing here, and it is right here.
+
+[Simon Leonard] 12:24:01
+exactly the same thing. The only difference is that in 3D, of course, we assume that there is.
+
+[Simon Leonard] 12:24:07
+more than one… there's, like, a 3D vector, so we need to account for that.
+
+[Simon Leonard] 12:24:12
+Uh, it's right down here, one more…
+
+[Simon Leonard] 12:24:20
+Yeah. Genius, sorry for that.
+
+[Simon Leonard] 12:24:26
+Right, here we are. Good. Now… The only difference is that this translation.
+
+[Simon Leonard] 12:24:34
+is assumed to be now an element. Of, um… R 3, so is the coordinates of the point.
+
+[Simon Leonard] 12:24:45
+in either frames. R3. For the 2D, we add R2. Okay.
+
+[Simon Leonard] 12:24:49
+Now, what about the inverse? Well, you can expect there's going to be pretty similar to what we already know. Essentially, the inverse is like, well, if I give you the translation now, I would say, if I give you… I'm asking you about PA.
+
+[Simon Leonard] 12:25:01
+Well, I need to give you PB, and I need to give you the translation. I'll say, I'm not going to give you PB, I'm going to give you PA instead. Well, just take the translation, send it on the other side.
+
+[Simon Leonard] 12:25:10
+And you're going to get… the solution you're looking for, and this is what we have here. So we're going to get the point A minus the translation.
+
+[Simon Leonard] 12:25:17
+Like, you know, minus the translation. The translation from B to A, if you put a minus sign, is nothing more than translation from A to B, you just kind of flip.
+
+[Simon Leonard] 12:25:28
+turn the table around. flip the script, and that works out.
+
+[Simon Leonard] 12:25:33
+Okay. So… 2D translation is very easy.
+
+[Simon Leonard] 12:25:39
+3D translation is. just as easy. There's nothing, no difference, there's just one more number to worry about.
+
+[Simon Leonard] 12:25:47
+Okay, so 3D rotations now.
+
+[Simon Leonard] 12:25:53
+In this case. And this is where the drawing gets.
+
+[Simon Leonard] 12:25:56
+pretty ugly. We still have frame A and frame B, and we have a point.
+
+[Simon Leonard] 12:26:03
+Now, if I say this point here, the coordinates of this point in frame A would be XA, YA, and you get maybe, like, a ZA here.
+
+[Simon Leonard] 12:26:14
+Z… 8. Okay, good. But now, with the rotation.
+
+[Simon Leonard] 12:26:24
+We now… have that both origins are.
+
+[Simon Leonard] 12:26:30
+at the same place. We're not allowed to translate, it was just a rotation. Okay, so we know that.
+
+[Simon Leonard] 12:26:34
+But now, frame A and B are free to rotate.
+
+[Simon Leonard] 12:26:40
+about that origin. Whatever way you want.
+
+[Simon Leonard] 12:26:44
+Something like we have here, doesn't really matter. We have X, Y, and Z.
+
+[Simon Leonard] 12:26:49
+Um, we're going to have a very similar. pattern that what we had for the 2D case. A rotation, whether it's in 2D or whether it's in 3D.
+
+[Simon Leonard] 12:27:01
+is a rotation, is… defined by a rotation matrix.
+
+[Simon Leonard] 12:27:05
+Because obviously, you might expect there's going to be a lot of sines and cosines in there, that is true.
+
+[Simon Leonard] 12:27:10
+But at the end of the day, it's nothing more than a 3x3 matrix. So now the points we have.
+
+[Simon Leonard] 12:27:16
+We have a 3D points here, a 3D point here. You're gonna have XYZ here, XYZ there.
+
+[Simon Leonard] 12:27:22
+And the rotation matrix we had in 2D is a 2x2 matrix. Now that becomes a 3x3 matrix.
+
+[Simon Leonard] 12:27:29
+Okay, it's a matrix. And these matrices are now called SO3. Same thing, special.
+
+[Simon Leonard] 12:27:40
+Orthogonal 3D. The matrix, these rotation matrices, have the same, same properties as the 2D one. I tell you, nothing has changed.
+
+[Simon Leonard] 12:27:55
+The determinant of a rotation matrix is. Plus 1.
+
+[Simon Leonard] 12:28:01
+Not zero, not minus 1. Not 1.2, not 0.75.
+
+[Simon Leonard] 12:28:07
+Plus 1. And the rotation matrix times its transpose.
+
+[Simon Leonard] 12:28:14
+is equal identity. These are the exact same two properties for 2D. You can say, same thing for 3D, you can say that's the same thing for 4, 5, 6, 10, 20, 100 dimensions. You know what?
+
+[Simon Leonard] 12:28:26
+In math, it doesn't matter. Like, in our world is in 3D, but in math you can go to as many dimensions as you want.
+
+[Simon Leonard] 12:28:33
+Rotation matrices are always. going to, uh, going to be having these two properties here, regardless of the damages. Of course.
+
+[Simon Leonard] 12:28:43
+4, 5, 6Ds are kind of. physically meaningless.
+
+[Simon Leonard] 12:28:47
+But mathematically, that's a different story. Anyway, so we have now.
+
+[Simon Leonard] 12:28:51
+Same two properties here, and there's two. These two properties… do not forget them. This is… Very, very, very important.
+
+[Simon Leonard] 12:29:00
+Okay, so, um… And I told you that would kind of, like, try to demonstrate these things. Now, this is the kind of stuff that I might try to do it in class on Thursday.
+
+[Simon Leonard] 12:29:10
+But I'll give it a shot here on Zoom.
+
+[Simon Leonard] 12:29:13
+So, when we did the 2D rotation matrix, we had the.
+
+[Simon Leonard] 12:29:19
+costs minus sign cost. I just told you a few minutes ago, remember that pattern, okay? Remember it.
+
+[Simon Leonard] 12:29:26
+But at the end of the day, cos theta minus sine theta, sine theta cos theta, at the end of the day, these are going to be values. These are going to be, like, four numbers.
+
+[Simon Leonard] 12:29:37
+So let's just forget about all the causes and all the signs. I mentioned also that this one thing that you need to try to unlearn.
+
+[Simon Leonard] 12:29:45
+Is to have the reflex. That when you hear the word, there's a rotation.
+
+[Simon Leonard] 12:29:52
+The reflex is to say, well, there's some angles.
+
+[Simon Leonard] 12:29:56
+try to purge that out of your… brain, and think that when I say you hear the word, there's a rotation.
+
+[Simon Leonard] 12:30:02
+you think of, like, there's a matrix. Because that's what rotations are.
+
+[Simon Leonard] 12:30:08
+The angles are a byproduct. Of matrices, not the other way around.
+
+[Simon Leonard] 12:30:13
+Okay, so let's look at this rotation matrix here, R.
+
+[Simon Leonard] 12:30:17
+Um, no. And you would be right to think that.
+
+[Simon Leonard] 12:30:22
+in 2D, there is one angle. Yeah, there is one angle. You rotate in 2D, but the real deal is the matrix.
+
+[Simon Leonard] 12:30:31
+Um… Let me take a little step back here, just realize I might have, should have talked about something, like, you know, when you talk about a 2D translation.
+
+[Simon Leonard] 12:30:40
+Here you have, like, you know, in this case here, you have a 2D translation.
+
+[Simon Leonard] 12:30:44
+Let's talk about the concept of degrees of freedom.
+
+[Simon Leonard] 12:30:50
+How many numbers. do you need to define a two-dimensional translation?
+
+[Simon Leonard] 12:31:00
+The answer is 2. You need a translation value for the X and a translation value for the Y. So that's two numbers.
+
+[Simon Leonard] 12:31:08
+How many values. Do you need to define a two-dimensional rotation? Now, that is where it gets a bit more murky.
+
+[Simon Leonard] 12:31:18
+Because I was saying that a two-dimensional rotation is a 2x2 matrix with, like, this value here.
+
+[Simon Leonard] 12:31:27
+costs minus sign, sine cost. We have 4 values, right? We have 4 numbers.
+
+[Simon Leonard] 12:31:32
+But if you look a little bit closer. You realize that these 4 values can come from one of them, which is the angle theta.
+
+[Simon Leonard] 12:31:41
+So, a two-dimensional rotation. has 1 degree of freedom. If I give you one value, you can fill up the four elements of a rotation matrix.
+
+[Simon Leonard] 12:31:53
+So we get two values for the translation. and one value for the rotation.
+
+[Simon Leonard] 12:32:00
+put together, you get 3 values. So, an SE.
+
+[Simon Leonard] 12:32:04
+to a special Euclidean. in 2D, has 3.
+
+[Simon Leonard] 12:32:13
+degrees of freedom. Two of them are for the translation. One of them is for the rotation. Now, let's go fast-forward now to the 3D case.
+
+[Simon Leonard] 12:32:23
+Let's do the same exercise. For the 3D translation.
+
+[Simon Leonard] 12:32:28
+how many numbers do you get, or do you need?
+
+[Simon Leonard] 12:32:32
+To fully define a three-dimensional translation. You need one for X.
+
+[Simon Leonard] 12:32:38
+One for Y, one for Z. Total of 3. 3, you transfer that has 3.
+
+[Simon Leonard] 12:32:42
+Unknowns. Or three values. Now, the 3D rotation.
+
+[Simon Leonard] 12:32:50
+how many numbers do you need. to define a three-dimensional rotation. We know we need one.
+
+[Simon Leonard] 12:33:00
+for 2D. How many do we need for 3D?
+
+[Simon Leonard] 12:33:04
+The answer is 3. And I can see now, it's like, of course, you have 3 angles. You rotate by X, by Y, and by Z. Yeah, okay, fine. That's one way to see it.
+
+[Simon Leonard] 12:33:16
+It's not the right way to see it. Now, if you get a rotation matrix, you're going to get 9 numbers.
+
+[Simon Leonard] 12:33:23
+1, 2, 3, 4, 5, 6, 7, 8, 9.
+
+[Simon Leonard] 12:33:26
+We had 4 for the 2D. But now what I'm saying is that with 3 numbers.
+
+[Simon Leonard] 12:33:33
+You can fill up the entire… 3x3 matrix.
+
+[Simon Leonard] 12:33:39
+For the 2D case, if I give you one, the angle, you could fill up all four values.
+
+[Simon Leonard] 12:33:44
+hear what I'm saying is that with 3 values, you can fill up 9.
+
+[Simon Leonard] 12:33:49
+Now, that needs to be… I try to demonstrate that, that this rotation matrix, because the angle stuff is kind of not very.
+
+[Simon Leonard] 12:34:00
+Um, three angles is not very good, but if I give you… if I have here, I have 9 numbers.
+
+[Simon Leonard] 12:34:05
+If I give you 3 of them. You should be able… and 3 very good ones, you should be able to fill up.
+
+[Simon Leonard] 12:34:14
+all the missing 6 values. Only by using the rotation matrix properties, which are just going to scroll down here a little bit.
+
+[Simon Leonard] 12:34:26
+Like this, okay. So, if I give you 3 values of these 9 here.
+
+[Simon Leonard] 12:34:31
+Use these. this property and these two properties here, to fill up the missing 6. Okay, well, let's look at that.
+
+[Simon Leonard] 12:34:38
+This is the rotation matrix here, and let's say that this first column.
+
+[Simon Leonard] 12:34:43
+is called E1. The second column is called E2, third column is called E3. So these are.
+
+[Simon Leonard] 12:34:51
+Three columns of three numbers. Now, this now being… an orthogonal, or, like, a special orthogonal matrix with these two properties here.
+
+[Simon Leonard] 12:35:03
+What can we say about this? We can say that.
+
+[Simon Leonard] 12:35:08
+The determinant of plus 1, for example. Um, says that any column.
+
+[Simon Leonard] 12:35:14
+Well, we have 3 of them. has a magnitude of 1.
+
+[Simon Leonard] 12:35:20
+So let's look at this a little bit. Further detail… So, let's say that EI, I could be 1, 2, or 3, doesn't really matter.
+
+[Simon Leonard] 12:35:30
+And so you're going to have 3 values. Oh, that's my, uh… This is my, uh… stylish battery of being low.
+
+[Simon Leonard] 12:35:43
+So, we have 3, uh… Where's the mouse here?
+
+[Simon Leonard] 12:35:48
+We have 3 values, so this could be R11, R21, or R31, or R12, choose whatever column. Replace I with a column. We have that, whatever it is.
+
+[Simon Leonard] 12:36:00
+The magnitude, the L2 norm, so if you take R11 squared plus R21 squared plus R3 1 squared, take the square root of that.
+
+[Simon Leonard] 12:36:09
+you're going to get one. So the magnitude of all these columns here.
+
+[Simon Leonard] 12:36:15
+is 1. Okay, so along with that, let's start.
+
+[Simon Leonard] 12:36:21
+I'm gonna say here… Um, we can… let's say that we pick up.
+
+[Simon Leonard] 12:36:28
+the first caller. Or it can be any column, but let's say I pick the first one.
+
+[Simon Leonard] 12:36:33
+And… I'm going to say, if I give you.
+
+[Simon Leonard] 12:36:38
+The first two numbers. I give you R11.
+
+[Simon Leonard] 12:36:44
+an R21. So, check, check.
+
+[Simon Leonard] 12:36:50
+Can you tell me what R3-1 is? Well, the answer is that if R11 squared plus R21 squared, I give you those already, I give you those.
+
+[Simon Leonard] 12:37:02
+And now I'm saying, give me this one. Well, if the.
+
+[Simon Leonard] 12:37:07
+the norm of these three is equal to 1, I can take the square root, send it to the other side, and I have R11 squared plus R21 squared, I know these.
+
+[Simon Leonard] 12:37:16
+I don't know this one here. Can you give me R31? Well, take these two, send it to the other side, take the square root of all the stuff.
+
+[Simon Leonard] 12:37:23
+And you, yes, you can then give me. Um, our… 3-1.
+
+[Simon Leonard] 12:37:32
+Like this, so you can actually give me now.
+
+[Simon Leonard] 12:37:35
+what R3-1 is. So now, I've given you two numbers.
+
+[Simon Leonard] 12:37:40
+You can give me a third one. Now, remember, though, is that.
+
+[Simon Leonard] 12:37:45
+At this point, I said that if I give you 3 numbers, you can fill up.
+
+[Simon Leonard] 12:37:52
+all 6 of them. Up to now. I've used two of them.
+
+[Simon Leonard] 12:37:58
+And I only give you one. So essentially, now what I'm saying is that.
+
+[Simon Leonard] 12:38:03
+I only have one more wildcard, only one more Joker.
+
+[Simon Leonard] 12:38:08
+And with this one, I need to give you all remaining 5 values, because I'll only give you 1.
+
+[Simon Leonard] 12:38:14
+So what we're going to do now is this.
+
+[Simon Leonard] 12:38:19
+is we know that. these columns are also orthogonals.
+
+[Simon Leonard] 12:38:24
+These represent rotations of coordinate frames. So, you know, you have the x-axis.
+
+[Simon Leonard] 12:38:30
+It is perpendicular to. the y-axis, which are also perpendicular to the Z axis. These are all.
+
+[Simon Leonard] 12:38:38
+orthogonal vectors, the columns, or the rows, if you want.
+
+[Simon Leonard] 12:38:42
+So that means that if you have now two columns.
+
+[Simon Leonard] 12:38:47
+E-I-N-E-J. you take the duct product between them, it should be 0.
+
+[Simon Leonard] 12:38:52
+So if you now open this up, and now this one here has a little typos, I should be a bit… careful with, uh… not sexually sorry.
+
+[Simon Leonard] 12:39:02
+is that if you take this one here, the first element, this should be, yeah, this should be R here, this should be R… There should be R here.
+
+[Simon Leonard] 12:39:11
+Are there… this is, like, little typos I made in this feed. This should be all rows. So if I take… This element of the first column.
+
+[Simon Leonard] 12:39:19
+Multiply by the same element of the second column.
+
+[Simon Leonard] 12:39:23
+Plus, this element of the first column times the same element of the second column.
+
+[Simon Leonard] 12:39:28
+And so on. It should all be equal to 0.
+
+[Simon Leonard] 12:39:33
+Now… Let's say, for example.
+
+[Simon Leonard] 12:39:39
+that up to now. Up to now.
+
+[Simon Leonard] 12:39:43
+I have given you.
+
+[Simon Leonard] 12:39:49
+Up to now, I've given you R11. I've given you this one, I've given you this one, and we also found this one. So I've given you this one here.
+
+[Simon Leonard] 12:40:01
+Um, so I've given you R11. I've given you… this should be an R here, I've given you this one here.
+
+[Simon Leonard] 12:40:07
+And we found… we just found R31. We found this one here, so R3I, we've got this.
+
+[Simon Leonard] 12:40:14
+So now we don't know any of these here. We don't know this one, we don't know this one, and we don't know this one here.
+
+[Simon Leonard] 12:40:21
+So now what I can say is that I'm going to give you… we have 3 wildcards, 3 jokers.
+
+[Simon Leonard] 12:40:26
+I've used two of them. I'm going to give you this one here.
+
+[Simon Leonard] 12:40:29
+Okay, I'm going to give you R… IJ. I'm going to give you the first element of the second column.
+
+[Simon Leonard] 12:40:36
+And now we say we need to find this one, and we need to find that one.
+
+[Simon Leonard] 12:40:42
+So what we can do now is. Come over here…
+
+[Simon Leonard] 12:40:49
+this stuff here that we had for the first column.
+
+[Simon Leonard] 12:40:55
+I'm gonna go here… this stuff that we had for the first column here.
+
+[Simon Leonard] 12:41:01
+I can do this again for the second column.
+
+[Simon Leonard] 12:41:05
+Right? All I got to do here is to write.
+
+[Simon Leonard] 12:41:07
+like, J here. I got it right, J, I can write J, I can write J, I can write J, I can write J, and I can write J, I can write J… Right, J one more time, and J one more time. So we have here the same thing.
+
+[Simon Leonard] 12:41:22
+R3J equals the square root of 1 minus R1J and R2J.
+
+[Simon Leonard] 12:41:29
+So this one here. is this one here.
+
+[Simon Leonard] 12:41:34
+Okay? So what this one here is, is that now we're going to see in here, we're going to see R1J.
+
+[Simon Leonard] 12:41:43
+R1Js here. The good news is that I've given you.
+
+[Simon Leonard] 12:41:47
+R1J, so we know this. Check. The only thing we don't know here is R2J, is this value here.
+
+[Simon Leonard] 12:41:55
+And this is going to show up here. And now it's showing up over here.
+
+[Simon Leonard] 12:42:02
+The good news now is that we have one… if we look at.
+
+[Simon Leonard] 12:42:06
+Now, this new equation here. Which are the variables that we do not know? The only one that we do not know here will be R2.
+
+[Simon Leonard] 12:42:16
+So we have one unknown and one equation. So, we can just then solve this equation here for R2J. It's a bit complicated, going to need to send all this stuff on this side here, but at the end of the day, you're going to have R2J equals.
+
+[Simon Leonard] 12:42:30
+Whatever it is here. Once you have R2J.
+
+[Simon Leonard] 12:42:34
+You can plug it back here, and you will get R3J, because we already have this one here.
+
+[Simon Leonard] 12:42:40
+So look at that now. With this additional last third.
+
+[Simon Leonard] 12:42:45
+wildcard, third kind of, like, degree of freedom. We found out the second and third element of the second column.
+
+[Simon Leonard] 12:42:57
+So now with 3 degrees of freedom, we have 6.
+
+[Simon Leonard] 12:43:01
+We have found, uh… four of the, uh… Three of the 6 unknown.
+
+[Simon Leonard] 12:43:12
+Um, sorry, we have found… six, sorry, sorry, with 3, uh, let me repeat this.
+
+[Simon Leonard] 12:43:19
+With 3 degrees of freedom, we have found 6 of the 9 elements.
+
+[Simon Leonard] 12:43:24
+Of the rotation matrix. So now we need to deal with… E3, which is the last column.
+
+[Simon Leonard] 12:43:30
+The bad news is that we do not have any more degrees of freedom to use, so we need to find out these… this last column here without any additional information.
+
+[Simon Leonard] 12:43:41
+Actually, it turns out that this is probably the easiest, uh… the easiest thing we can do.
+
+[Simon Leonard] 12:43:48
+is because the third column. represents, sort of, like, the z-axis. And that Z axis is perpendicular to the X and the y-axis.
+
+[Simon Leonard] 12:43:59
+So now we have the x-axis, we have the first column, we have the y-axis, that's the Y column. You take the cross product, that's the right-hand rule.
+
+[Simon Leonard] 12:44:09
+So you're going to take, in this case here that E3.
+
+[Simon Leonard] 12:44:15
+E3? will be equal to E1.
+
+[Simon Leonard] 12:44:20
+Cross product, E2. That's it. That will fill up the third column.
+
+[Simon Leonard] 12:44:24
+So, with all that said. is that when you have a…
+
+[Simon Leonard] 12:44:32
+rotation matrix. In 3D. It has 9 values.
+
+[Simon Leonard] 12:44:38
+But these 9 values. only… you're only free.
+
+[Simon Leonard] 12:44:45
+to choose 3 of them. Once that choice is made.
+
+[Simon Leonard] 12:44:49
+all the missing 6 values can be determined. from some clever combinations and processing of these.
+
+[Simon Leonard] 12:44:57
+Of these 3 nodes here. And in this case, it was like, I'm going to give you these ones here.
+
+[Simon Leonard] 12:45:02
+Just put this down here. I'm going to give you these two here, and this one here, and everything else can be found out of these three.
+
+[Simon Leonard] 12:45:09
+Of course, most people much prefer. The explanation that's like, well, yeah, it's a 3D rotation. You rotate once around about the X, once about the Y, and once about the Z. Well, that's fine, because now you're using angles, but that's not what rotations.
+
+[Simon Leonard] 12:45:26
+are all about. Rotations are about matrices. Out of these values, if you'd like to, yes, you can extract.
+
+[Simon Leonard] 12:45:35
+angles, much like we did in the 2D case, but the definition?
+
+[Simon Leonard] 12:45:39
+does not change. It is a matrix. It's not… it's not about angles.
+
+[Simon Leonard] 12:45:47
+And… let me just go to this now here.
+
+[Simon Leonard] 12:45:52
+Okay. But we like Hangels a whole lot.
+
+[Simon Leonard] 12:45:56
+So, we cannot avoid that. It is true. that there's this idea of rotating about the X, Y, and Z.
+
+[Simon Leonard] 12:46:03
+Let's take them case by case. One… access at the time.
+
+[Simon Leonard] 12:46:09
+These are the special cases. Let's say, for example, that we have frame A and frame B.
+
+[Simon Leonard] 12:46:15
+Much like we had over here. If we were to rotate.
+
+[Simon Leonard] 12:46:20
+only about the x-axis, so we spin frame above the x-axis. We don't touch the other ones, so we're just going to be spinning about the x-axis.
+
+[Simon Leonard] 12:46:29
+What kind of rotation matrix. can we get out of this?
+
+[Simon Leonard] 12:46:36
+Well, in this case here, this is what a rotation about the x-axis.
+
+[Simon Leonard] 12:46:42
+looks like. So, we're gonna be here, that little X indicate we rotated about the x-axis, and the phi here is the angle, the amount of… in radiance, the amount of rotations.
+
+[Simon Leonard] 12:46:51
+So we're going to have now this very, very specific form.
+
+[Simon Leonard] 12:46:57
+Notice, first of all, is the same pattern. Costs, minus sign, sine.
+
+[Simon Leonard] 12:47:04
+That's the same pattern we had for the 2D case.
+
+[Simon Leonard] 12:47:07
+This is going to be in the bottom right block.
+
+[Simon Leonard] 12:47:10
+And we're gonna have here… a rather easy row and column where we have a 1.
+
+[Simon Leonard] 12:47:16
+On the top left corner, followed by zeros. underneath and to the right of it.
+
+[Simon Leonard] 12:47:23
+Whenever you see this. Let's say this is the x-axis here.
+
+[Simon Leonard] 12:47:28
+And you're rotating about the x-axis. Why do we… there's a good reason why we have a 1 here, and why do we have a 1 here to begin with?
+
+[Simon Leonard] 12:47:38
+If you have a point.
+
+[Simon Leonard] 12:47:42
+And you're gonna be rotating that point. about the x-axis of your frame.
+
+[Simon Leonard] 12:47:49
+What kind of trajectory that point does as you rotate? Well, if this is the x-axis here.
+
+[Simon Leonard] 12:47:56
+And you rotate about the x-axis, this point will be doing a circle.
+
+[Simon Leonard] 12:48:00
+around the x-axis, correct? Will the X coordinate of that point change? Will you be changing the X.
+
+[Simon Leonard] 12:48:10
+coordinate of that point as it spins around the x-axis. The answer is no.
+
+[Simon Leonard] 12:48:15
+It's been… he was going to change the Y and the Z axis, that's, we know.
+
+[Simon Leonard] 12:48:19
+But because it's spinning above the x-axis, its x-coordinate is not going to be all of a sudden kind of, like, shifting along, it's going to be.
+
+[Simon Leonard] 12:48:27
+Constantly rotating about the x-axis. This is why you have the one here. This one says the X coordinate is not changing.
+
+[Simon Leonard] 12:48:36
+The Y and Z corners. Now, these will be changing according to.
+
+[Simon Leonard] 12:48:40
+Cost minus sign, sine cost. Um, now, same thing now about the y-axis. First thing to note is that the same pattern now is that if you have a rotation about the y-axis, if this is the y-axis, and you're rotating about the y-axis.
+
+[Simon Leonard] 12:48:58
+The y coordinate of the point will not be changing. It's going to be spinning about the y-axis, it's not going to start to go one way or the other.
+
+[Simon Leonard] 12:49:05
+So this is why now you have the one over here.
+
+[Simon Leonard] 12:49:08
+And so this here says we're going to be rotating above the y-axis by an angle.
+
+[Simon Leonard] 12:49:14
+better, and now you're going to have cos sine minus sine cos. Now, these are going to be the four values here. Now, remember.
+
+[Simon Leonard] 12:49:21
+You have this cost minus sign, sine cost. Here, the pattern is cost.
+
+[Simon Leonard] 12:49:28
+sine, minus sign. Gosh, it's almost the same pattern here. The only difference that we're flipping.
+
+[Simon Leonard] 12:49:35
+the sine of this one here. This is caused because of the right-hand rule that we have.
+
+[Simon Leonard] 12:49:41
+So this is the pattern. Just don't make that mistake. Like, a lot of time, it's very… it's cost minus sine, sine cos, and then you always apply it. It's true, you apply this for all the rotation matrices.
+
+[Simon Leonard] 12:49:53
+Accept. About the y-axis.
+
+[Simon Leonard] 12:49:58
+Such as the one we have over here. All right.
+
+[Simon Leonard] 12:50:03
+Now, same thing now, rotation about the Z axis.
+
+[Simon Leonard] 12:50:08
+Note that we have a 1 here to indicate that if we rotate about the Z axis.
+
+[Simon Leonard] 12:50:15
+The point here will be spinning about the z-axis. It's not going to be changing.
+
+[Simon Leonard] 12:50:20
+It's Z coordinate. It's just going to be rotating, orbiting above the z-axis. It's not going to be changing in Z, but we're going to have here the same pattern of cos.
+
+[Simon Leonard] 12:50:29
+Minus sine sine cos, I guess here the angle is alpha.
+
+[Simon Leonard] 12:50:33
+So there you go. So now we can say that we have rotations.
+
+[Simon Leonard] 12:50:37
+about all 3 axes separately. They're not kind of like, you know, combined in any way or form.
+
+[Simon Leonard] 12:50:46
+We rotate by X, that's a rotation by X. Rotate about.
+
+[Simon Leonard] 12:50:52
+Why is this? Routine about Z. It's this year. It says, well, what if you kind of start to mix them up?
+
+[Simon Leonard] 12:50:58
+combine them to have, like, a real 3D rotation. Yes, you can.
+
+[Simon Leonard] 12:51:04
+Um, but these are called. parameterization of SO3. And again, I want to emphasize that an.
+
+[Simon Leonard] 12:51:11
+three-dimensional rotation is a. matrix. Here's what you can do.
+
+[Simon Leonard] 12:51:19
+This year is your rotation matrix. This is R. This is your, like, R11, R21, all that stuff. That's what it is.
+
+[Simon Leonard] 12:51:26
+And now, what you can do, if you really are big on these angles, is that you can combine them, for example, like this.
+
+[Simon Leonard] 12:51:35
+You're going to have a rotation by X, rotation by Y, rotation by Z.
+
+[Simon Leonard] 12:51:41
+You multiply them together. And by the way, SO2 and RO3, I mentioned it's a group.
+
+[Simon Leonard] 12:51:48
+They form a group of matrices. That group is.
+
+[Simon Leonard] 12:51:52
+Closed, that means that it's defined. for operation.
+
+[Simon Leonard] 12:51:57
+product operation, meaning that if you have a rotation matrix.
+
+[Simon Leonard] 12:52:02
+and you have another rotation matrix, let's call it R1 and R2.
+
+[Simon Leonard] 12:52:07
+You can multiply them together. To get the result will be a rotation matrix. That's called a cabooza. It means that you take two of these elements, you multiply them together, and the output is.
+
+[Simon Leonard] 12:52:19
+another rotation matrix. You cannot add rotation matrix. R1 plus R2, for example, yes, that will give you another matrix.
+
+[Simon Leonard] 12:52:29
+I'll give you another major, but that matrix here will not be.
+
+[Simon Leonard] 12:52:34
+A rotation matrix. It will violate the two properties. For example, if you have identity here, identity there.
+
+[Simon Leonard] 12:52:40
+Okay, you're adding two matrices. Identity.
+
+[Simon Leonard] 12:52:46
+The result, you're adding up, the result will be a matrix of 2, 2, and 2.
+
+[Simon Leonard] 12:52:51
+That's not a rotation matrix. The determinant of that matrix is 2.
+
+[Simon Leonard] 12:52:56
+rotation matrix, the determinant is 1, so that doesn't work, but if you multiply them, that's fine. That's preserved.
+
+[Simon Leonard] 12:53:01
+So you can multiply them, but you cannot add them or subtract them.
+
+[Simon Leonard] 12:53:06
+So now, you can do this here. You can do that little trick, you can combine them. Rotate by X, rotate by Y, rotate by Z. Now I've got a question.
+
+[Simon Leonard] 12:53:18
+Um… if I… if you look at this one here.
+
+[Simon Leonard] 12:53:23
+And I say, okay, you've got a rotation by X, another one by Y, another one by Z.
+
+[Simon Leonard] 12:53:31
+It's understood that you need to do all 3 of them.
+
+[Simon Leonard] 12:53:36
+But order matters. Which is the first one? If I… if I take this, this is frame A here, I got X.
+
+[Simon Leonard] 12:53:43
+Y and Z. I said, oh, you need to rotate this by X, Y, and Z.
+
+[Simon Leonard] 12:53:48
+Do you rotate first by X? Then by Y, and then by Z, or do you start by Z, Y, and X? How does that work?
+
+[Simon Leonard] 12:53:55
+Well, I said X, rotate X, Y, and Z, but wait a minute.
+
+[Simon Leonard] 12:53:59
+If I rode this here with a point. RX, RY, and RZ. And I said, now there's a point, there's a point I don't want to rotate. There's a point.
+
+[Simon Leonard] 12:54:10
+I want to rotate the point here, point B.
+
+[Simon Leonard] 12:54:13
+Point B in frame B, and I want to get the coordinates of that point in frame A.
+
+[Simon Leonard] 12:54:17
+Which one do I do first? Oh, now it's this one. They rotate the point by frame B first.
+
+[Simon Leonard] 12:54:23
+And then the result will be rotating by frame.
+
+[Simon Leonard] 12:54:26
+by rotational y, and for instance, that's the first thing to do here, is that.
+
+[Simon Leonard] 12:54:31
+What I'm saying is that you first rotate by frame… rotation by X, Y, and Z.
+
+[Simon Leonard] 12:54:37
+very, very depends on who you're talking to. Some people say, well, I'm going to rotate here by X because it's written on the left-hand side.
+
+[Simon Leonard] 12:54:46
+The other one says, now I'm going to be rotating by Z, because it's on the right-hand side. If I multiply by a point, if I want to rotate a point, that's going to be the first one.
+
+[Simon Leonard] 12:54:55
+The first rotation to be executed is going to be this one.
+
+[Simon Leonard] 12:54:58
+The bottom line is that this is the first problem, is that when you start dealing with rotation angles and that kind of stuff that I have written here is, like, nobody's right, and nobody, and everybody… everybody's right and nobody's wrong, and that's a big problem.
+
+[Simon Leonard] 12:55:12
+Nobody agrees on which is the first word. The other problem.
+
+[Simon Leonard] 12:55:16
+Is that if I use here these 3 rotation matrices here that we have here.
+
+[Simon Leonard] 12:55:22
+That says… Um, I think I'm just gonna scroll down a little bit.
+
+[Simon Leonard] 12:55:31
+is that this… Order, a matrix, product.
+
+[Simon Leonard] 12:55:40
+It's not commuter… you cannot switch the order of the matrix product. So this one here.
+
+[Simon Leonard] 12:55:47
+This is this one here. If you flip. These rotation X and Z.
+
+[Simon Leonard] 12:55:53
+It's not the same rotation at all. You know, A, B… is not the same as BA. It is not equal.
+
+[Simon Leonard] 12:56:02
+Okay, well, who's right, and who's wrong? And that's the kind of thing. Everybody's right, and nobody's wrong, but somebody kind of like, you're not talking about the same rotation. If you do it this way.
+
+[Simon Leonard] 12:56:13
+In this very specific order, you're going to get a rotation matrix. I agree with you.
+
+[Simon Leonard] 12:56:18
+If you do it in the other way. you're going to get a different rotation matrix. The two will not be equal.
+
+[Simon Leonard] 12:56:26
+Who's right and who's wrong? Well, you know, if I give you frame A and frame B, there's a rotation between… there's one rotation between frame A and frame B. Which one is it?
+
+[Simon Leonard] 12:56:37
+And now you need to start looking at how you define these rotation angles and the.
+
+[Simon Leonard] 12:56:42
+Order of which you do this. This is. a recipe for disaster.
+
+[Simon Leonard] 12:56:47
+Okay? Because there is no right or wrong here.
+
+[Simon Leonard] 12:56:52
+Well, of all the people I know, some use this version here, some use that version here.
+
+[Simon Leonard] 12:56:57
+What is sure is that if both of these.
+
+[Simon Leonard] 12:57:00
+groups use the same angles? One of these two groups will be incorrect. That is, you know, like, the rotation between A and B has a rotation matrix, not 2.
+
+[Simon Leonard] 12:57:11
+And so, that is the main problem here, is like, this is a very, very, very kind of like.
+
+[Simon Leonard] 12:57:17
+typical problem with. The insistence or persistence in using.
+
+[Simon Leonard] 12:57:24
+Angles. If I say, I want to use a rotation by X, Y, and Z, all right, fine.
+
+[Simon Leonard] 12:57:30
+Be very careful, though, because if you're using that order here.
+
+[Simon Leonard] 12:57:35
+Your colleague, or teammates, where it is you're… might be using a different order, so make sure that everybody knows of what the order is. If you're looking for Ross.
+
+[Simon Leonard] 12:57:43
+Ross is typically using, um. this order here, RX, RY, RZ, but that is just because I know it, because I look at the code often enough that I can tell you that now. Otherwise, there would be.
+
+[Simon Leonard] 12:57:54
+no way to do this. Actually, the one thing that I remember, I think, is that.
+
+[Simon Leonard] 12:58:00
+Uh, this kind of pattern. And by the way, just to make it worse.
+
+[Simon Leonard] 12:58:05
+There's nothing that would prevent you. from writing a rotation matrix as.
+
+[Simon Leonard] 12:58:11
+R Y RZ. RX, or… RZ.
+
+[Simon Leonard] 12:58:19
+RX, Ry. You can essentially have any combinations of RXRI, and these would be rotation matrix.
+
+[Simon Leonard] 12:58:25
+You can have a lot of different versions of that stuff.
+
+[Simon Leonard] 12:58:28
+You just need to be very, very, very careful of how you do this. So whenever you choose, make the decision.
+
+[Simon Leonard] 12:58:34
+to use angles. represent a rotation. Now.
+
+[Simon Leonard] 12:58:40
+Keep in mind, rotation, the rotation between 2 frames is unique.
+
+[Simon Leonard] 12:58:46
+There is no… if I draw here.
+
+[Simon Leonard] 12:58:51
+if I… if you go back to this thing here, you see frame A and frame B, right, on this.
+
+[Simon Leonard] 12:58:58
+The rotation is… there is one… only one rotation between these two frames.
+
+[Simon Leonard] 12:59:03
+And yet, if you insist on using. angles, now you're opening to a multitude of possibilities here. That is annoying.
+
+[Simon Leonard] 12:59:13
+But if you stick with a rotation matrix, rotation matrices.
+
+[Simon Leonard] 12:59:18
+is… are the only… format of rotation that gives you a unique solution.
+
+[Simon Leonard] 12:59:26
+Rotation angles here is a can of worm, because it's going to say, well, I could do it like this, or you can do it like that, you can do it like this, and every time, you always have to remember yourself, like, how is these rotation been like, our X, our Y, or Z, or the other way around?
+
+[Simon Leonard] 12:59:42
+It gets very, very confusing, so just be aware of this.
+
+[Simon Leonard] 12:59:46
+You never, ever, ever have that problem. when you're sticking with rotation matrices, and that's why.
+
+[Simon Leonard] 12:59:52
+rotations are defined by. SO2 and SO3 and so on.
+
+[Simon Leonard] 12:59:58
+Okay, but, but, um, you know what? When it's very convenient.
+
+[Simon Leonard] 13:00:04
+Uh, sometimes rotation angles, and it's going to be convenient for us. It's one of the signs we're going to use.
+
+[Simon Leonard] 13:00:09
+You might have use of roll, pitch, and yaw. Like, it's often used in avionics and so on. Yeah, we're going to use that.
+
+[Simon Leonard] 13:00:15
+Because it becomes very… it's more natural to use in certain.
+
+[Simon Leonard] 13:00:18
+for certain problems, but it's a very dangerous deal. You have to be very consistent with how you're.
+
+[Simon Leonard] 13:00:26
+the order in which your… or rotations about X, Y, and Z are used.
+
+[Simon Leonard] 13:00:29
+You can have quaternions. Quaternions is kind of yet another way of.
+
+[Simon Leonard] 13:00:36
+parameterizing rotations. What quaternions are, they are vectors.
+
+[Simon Leonard] 13:00:43
+And by the way, with these rotations here. How many degrees of freedom do we have? We… I've demonstrated earlier on.
+
+[Simon Leonard] 13:00:52
+That… a rotation matrix? It's composed of 9 numbers, but if I give you 3 of them.
+
+[Simon Leonard] 13:00:57
+Three of these numbers, 3 degrees of freedom, I can fill up the rest.
+
+[Simon Leonard] 13:01:01
+So we have 3 degrees of freedom. Quaternions. This one here.
+
+[Simon Leonard] 13:01:07
+We have 3 rotation matrices, R, X, and Y and Z. So you get.
+
+[Simon Leonard] 13:01:13
+Phi, Beta, and alpha. 3 degrees, and that has to be… has to be the same. So we've got 3 degrees of freedom.
+
+[Simon Leonard] 13:01:20
+quaternions. Quaternions are vectors, vectors of four numbers. QX, Y, Z.
+
+[Simon Leonard] 13:01:29
+And W. Need to come up with another one, QW.
+
+[Simon Leonard] 13:01:33
+The thing is that the norm of these four vectors is always equal to 1.
+
+[Simon Leonard] 13:01:40
+So essentially, this means that. You have 4 numbers.
+
+[Simon Leonard] 13:01:45
+But the norm is one. So if you take QX squared plus QY squared plus QZ squared plus QW squared, take the square root of all that.
+
+[Simon Leonard] 13:01:54
+you're gonna get one. So, the degrees of freedom of this is 3. If I give you QX, QY, QZ, or if I give you any of these three numbers, you can always get… give me back the fourth one, because the norm of all these four numbers.
+
+[Simon Leonard] 13:02:08
+is equal to 1. That's very similar to what we did when we talked about the columns of the rotation matrix above.
+
+[Simon Leonard] 13:02:15
+Um, so there, that's one. Uh, another one is called Axis Angles. We're going to look also at exponential maps, but, um… axis angles is, uh, the idea that you can define.
+
+[Simon Leonard] 13:02:29
+a rotation in 3D. by a unit vector.
+
+[Simon Leonard] 13:02:33
+and an angle. So what's their job? The unit… the job of the unit vector is to point somewhere in Z. It has the origin, it said that the root is at the origin here, it's a unit vector, so it's length is 1.
+
+[Simon Leonard] 13:02:46
+And it's pointing somewhere in 3D. Okay, well, let's just talk about a unit vector.
+
+[Simon Leonard] 13:02:54
+how many degrees of freedom a 3D unit vector has. It has a UX, UI, and uz. Okay, fine, but the norm is 1, so if you get… I give you UX and UI, you should be able to give me back UZ, because the norm is 1. So that's… That unit vector has.
+
+[Simon Leonard] 13:03:10
+two degrees of freedom. That unit vector defines.
+
+[Simon Leonard] 13:03:14
+The axis about which the rotation is done. Remember when we did the X, Y, and Z?
+
+[Simon Leonard] 13:03:21
+rotation about X, Y, and Z. These are vectors. These are unit vectors pointing along the X, Y, and Z. But now I'm saying that now that vector can point anywhere in 3D space.
+
+[Simon Leonard] 13:03:31
+2 degrees of freedom, you get that unit vector. So this is where it is.
+
+[Simon Leonard] 13:03:35
+Then you specify how much you want to rotate.
+
+[Simon Leonard] 13:03:39
+about that access, like, in value. data, for example. That's another degree of freedom. So we get 2 for the vector, 1 for the angle, total of 3.
+
+[Simon Leonard] 13:03:49
+So this is the one we have here. There's also exponential maps, we're going to look a little bit at this when we did do head-eye calibration, but the bottom line here is that.
+
+[Simon Leonard] 13:03:57
+These are all different ways. 2… parameterize or interpret what a rotation is, a 3D rotation.
+
+[Simon Leonard] 13:04:06
+At the end of the day, all of them.
+
+[Simon Leonard] 13:04:10
+have 3 degrees of freedom. All of them have advantages and some inconvenience.
+
+[Simon Leonard] 13:04:15
+rotation matrices, like, uh, you know, is… considered supreme. That's the one.
+
+[Simon Leonard] 13:04:20
+That's what really truly defines unique rotation between two frames. Okay, let's leave that aside.
+
+[Simon Leonard] 13:04:26
+But now, if you want to say, well, I want to use rotation angles instead. Okay, that's fine, you're going to have these 3 ones here.
+
+[Simon Leonard] 13:04:33
+In our case, we're going to find that useful for Calend Filter. Quiturnians. Why do we care about quaternions?
+
+[Simon Leonard] 13:04:39
+Quaternions is that, um, it's often used, Ross uses a lot of quaternions, mainly for displaying purposes.
+
+[Simon Leonard] 13:04:47
+If you display a rotation matrix to a screen, like to prompt, like the data that flashes, you're looking at.
+
+[Simon Leonard] 13:04:55
+9 numbers, okay. If you're looking at a quaternions, you're looking at 4 numbers. That's certainly convenient there.
+
+[Simon Leonard] 13:05:01
+There's also some nice things about quaternions that you can use to do some nice and smooth, uh.
+
+[Simon Leonard] 13:05:07
+rotation trajectories, if you want to do… these are called slurps.
+
+[Simon Leonard] 13:05:09
+We're not going to look at that, but if you want to do that, that's fine. It's kind of used for this. So that's an advantage of quaternions. There's some algebra is really.
+
+[Simon Leonard] 13:05:18
+elegant when using quaternions. unit vectors, or exponential maps.
+
+[Simon Leonard] 13:05:23
+I'm going to look at them. They're kind of related. These are very, very, uh, useful in.
+
+[Simon Leonard] 13:05:28
+other parts of… I'm going to use this for, like, mathematical, like, algebra for… and I calibration. The bottom line is that.
+
+[Simon Leonard] 13:05:38
+whenever you need it, it's very sometimes can be convenient to say, okay, I've got a math problem here, that math problem is easier to solve, easily solve by using.
+
+[Simon Leonard] 13:05:48
+Quaternions. If I'm using axis angles, or if I use, uh, roll pitching angles.
+
+[Simon Leonard] 13:05:54
+For example, there's, like, you know, these cases, but usually the best way to deal with this.
+
+[Simon Leonard] 13:06:01
+is keep it as it is. That is a rotation is a 3 by 3 matrix.
+
+[Simon Leonard] 13:06:05
+Case closed. Okay. Um, let me just clean this up.
+
+[Simon Leonard] 13:06:16
+Alright, so now that this is out of the way, now we can look at.
+
+[Simon Leonard] 13:06:21
+what we did in 2D is, like, let's put these two pieces together.
+
+[Simon Leonard] 13:06:24
+3D rigid body motion. We're gonna have the exact same thing. I can guarantee you that if I go back to the screens.
+
+[Simon Leonard] 13:06:33
+We're going to have the exact same thing here.
+
+[Simon Leonard] 13:06:35
+is that we're going to have. The exact same equation was written, is that you take a point in frame B, you first rotate, first rotate it.
+
+[Simon Leonard] 13:06:45
+Then you translate it. That's the rule. And we want to do the same thing. That plus year was very annoying, and we went.
+
+[Simon Leonard] 13:06:55
+Used homogeneous. coordinates and transformation to get… not get rid of it, but just to pack it up.
+
+[Simon Leonard] 13:07:02
+in a nice linear equation such as this one. This is what we want here.
+
+[Simon Leonard] 13:07:06
+So we're going to use the exact same trick.
+
+[Simon Leonard] 13:07:08
+is that we're going to have here homogeneous coordinates.
+
+[Simon Leonard] 13:07:12
+in 2D, we added a 1. We're gonna do the exact same thing here. We added the 1 to the points. So here, we're going to be adding a 1 to the points. What's the difference? Well, the points already had 3 coordinates, X, Y, and Z, so we're fine, we're going to add a fourth one.
+
+[Simon Leonard] 13:07:27
+There's gonna be one. We're gonna do the same thing here, XYZ, I don't want. So now the vectors are now 4x1.
+
+[Simon Leonard] 13:07:33
+Understood that the fourth one is. Just a moment. We're going to do the same thing for the, uh… transformation.
+
+[Simon Leonard] 13:07:42
+Where we packed up the rotation in the top left corner, followed to the right by the translation, and we had a.
+
+[Simon Leonard] 13:07:49
+vector at the bottom, a row of zeros and a 1.
+
+[Simon Leonard] 13:07:52
+Now, you understand that everything now has more values.
+
+[Simon Leonard] 13:07:56
+But, you know, you're looking at this one here.
+
+[Simon Leonard] 13:07:59
+I wrote the exact, exact same thing for the 2D case. It's understood, the only thing here is that we understand that.
+
+[Simon Leonard] 13:08:06
+The rotation is a 3 by 3 matrix instead of a 2x2 matrix.
+
+[Simon Leonard] 13:08:12
+The translation is a 3x1 vector instead of a 2x1 vector. Everything else.
+
+[Simon Leonard] 13:08:17
+Otherwise, is identical. And all I've got to do here is to perform the multiplication, and you will find out that your rotation matrix.
+
+[Simon Leonard] 13:08:27
+Just clean this up. Is that the rotation matrix.
+
+[Simon Leonard] 13:08:32
+Needs to multiply point. That rotation matrix will multiply the points here.
+
+[Simon Leonard] 13:08:37
+And that translation, we'll multiply the 1. It all works out, okay? It's a hack. These homogenous stuff for us, for us, not all the time, but for us.
+
+[Simon Leonard] 13:08:47
+It's only a hack to make. you have something in this form.
+
+[Simon Leonard] 13:08:52
+be your face, as opposed to this form, frowny face. We don't like this one.
+
+[Simon Leonard] 13:08:57
+That's… that's it. And now we can say the same… the similar thing is what about the inverse?
+
+[Simon Leonard] 13:09:08
+Let me deal with the SC3 after. The inverse is going to be the exact same thing.
+
+[Simon Leonard] 13:09:14
+You take… you take the, uh… The rotation matrix.
+
+[Simon Leonard] 13:09:20
+You take the transpose. That's how you inverse, and then you're gonna have.
+
+[Simon Leonard] 13:09:26
+this block here. So this pattern of rotation transpose minus rotation transpose translation was exactly the same thing we did for the 2DKs. So if you understand.
+
+[Simon Leonard] 13:09:36
+how you've done it for 2D, the 3D is exactly the same way.
+
+[Simon Leonard] 13:09:41
+Exactly the same way. There's just more numbers to mess up with. That's it.
+
+[Simon Leonard] 13:09:45
+So, this idea now of having. a combination of a rotation and a translation is called an SE3.
+
+[Simon Leonard] 13:09:55
+SE3. Meaning that you have to… if you want to make an SE3, you need two ingredients. You need a translation.
+
+[Simon Leonard] 13:10:06
+Okay, what's the translation about? Well, for 2D, it was an element of R2, and now it's not, because now it has to be an element of R3. Fine, we do 3D stuff.
+
+[Simon Leonard] 13:10:16
+And you need a rotation. That rotation needs to be an element of SO3, which is.
+
+[Simon Leonard] 13:10:22
+a group of 3x3 matrices. That has a determinant of plus 1.
+
+[Simon Leonard] 13:10:30
+And then rotate the matrix times its transpose equals identity, and this is actually the nice things that this gives us, that the inverse is.
+
+[Simon Leonard] 13:10:38
+equal to its transpose. Same thing, 2D, 3D, there's no difference whatsoever between these two there.
+
+[Simon Leonard] 13:10:46
+Okay. Um, and I think I have an example for this, but I don't think it's in this slide here, so I'm going to post that.
+
+[Simon Leonard] 13:10:53
+additional example, essentially, it does the same thing, that combines the rotation and the translation together.
+
+[Simon Leonard] 13:10:58
+And you can actually do that, uh… crunch the numbers and get the results, okay? So that's it, that's it. This is now, like, the, um… Uh, the, uh… three-dimensional, rigid body motion part. All it does, all it does is that it tells us.
+
+[Simon Leonard] 13:11:15
+How was the rotation and translation relationships. between Cartesian frames.
+
+[Simon Leonard] 13:11:21
+If we go back to. this… Slide here, yeah.
+
+[Simon Leonard] 13:11:32
+Rhythm, and space robotics. Let's go down here…
+
+[Simon Leonard] 13:11:43
+So what that gives us is… Hang on… is this thing here.
+
+[Simon Leonard] 13:11:50
+It's like, how are this part. How are two corded frames.
+
+[Simon Leonard] 13:11:56
+A and B, we call it A and B, how are they related? It's because there is a rotation between them and a translation between them. That's all. There's T for the tool frames, but, you know, it could be A and B, whatever, these are just letters.
+
+[Simon Leonard] 13:12:07
+The joint space was pretty easy. You add joints, subtract joints, that's easy. The Cartesian stuff is okay. It's, you know, rotation translations are not that bad. The rotation part, again, the emphasis is on a rotation is a.
+
+[Simon Leonard] 13:12:20
+matrix, not angles. The angles is a byproduct of that matrix, okay?
+
+[Simon Leonard] 13:12:29
+Alright, so now we have what these two things here, what they represent.
+
+[Simon Leonard] 13:12:34
+The, uh… They represent two different planets.
+
+[Simon Leonard] 13:12:38
+Because you look at the robot, you can look at the robot either through its joints, which is the most.
+
+[Simon Leonard] 13:12:45
+basic way, form of looking at it. And then you can look at it from Cartesian frames, where you have one frame at the base and one frame of the tool, and there's that relationship.
+
+[Simon Leonard] 13:12:53
+Between them. Obviously. If you move the joints of the robot.
+
+[Simon Leonard] 13:12:58
+You're going to be moving the tool of the robot.
+
+[Simon Leonard] 13:13:02
+So, changes on this side, if you move the joints, will cause changes over here.
+
+[Simon Leonard] 13:13:09
+what's the relationship between these two here? That's called kinematics. So what I'm going to look next is, like, the forward kinematics, like, if I give you a set of joints.
+
+[Simon Leonard] 13:13:20
+I'm telling you joint 1, 2, 3, 4, 5. I'll tell you what they are.
+
+[Simon Leonard] 13:13:26
+Can you tell me where is that tool? What's that Cartesian relationship between the base of the robot and the tool of the robot? It has to be… there's got to be a relationship, and that's what.
+
+[Simon Leonard] 13:13:36
+forward kinematics is. So that's gonna be the next thing we're gonna be looking at.
+
+[Simon Leonard] 13:13:44
+Let me just give that part here. So this is what we have here.
+
+[Simon Leonard] 13:13:49
+Now, forward kinematics. is actually a function.
+
+[Simon Leonard] 13:13:55
+Okay, well, let's talk about this a little bit.
+
+[Simon Leonard] 13:13:59
+If we have… X and Y frame. And I give you a function.
+
+[Simon Leonard] 13:14:06
+A quadratic function, for example. And you would say F of X.
+
+[Simon Leonard] 13:14:13
+equals X squared, let's say. You can say, well, Y equals.
+
+[Simon Leonard] 13:14:18
+X squared. That's the function here. F of X is equal to y, okay.
+
+[Simon Leonard] 13:14:23
+That's fine. Um, now what we get and what we provide is we feed in the X, and we get.
+
+[Simon Leonard] 13:14:31
+the Y coming out. What we're looking at now is a little bit different.
+
+[Simon Leonard] 13:14:35
+Because we're going to have a function, just like this one here.
+
+[Simon Leonard] 13:14:39
+But the function we now have says. My input is not X.
+
+[Simon Leonard] 13:14:44
+My input is a vector of joints. Q1, Q2.
+
+[Simon Leonard] 13:14:50
+All the way to QN. If you have 6 joints, so be it. So that queue here will be what we have here. This is going to be the joint values.
+
+[Simon Leonard] 13:14:56
+And what the function will return is not going to be Y, it's not going to be a function on a 2D plot.
+
+[Simon Leonard] 13:15:02
+It's going to be returning a rotation and a translation, which is going to be what we have over here.
+
+[Simon Leonard] 13:15:07
+So that's the thing, and there's nothing to prevent the function from returning a, you know, functions in half… a function can return whatever it wants.
+
+[Simon Leonard] 13:15:15
+It doesn't have to be a value, or even a vector. In this case, it says we choose that this.
+
+[Simon Leonard] 13:15:21
+function F will return two things. A rotation and a translation. And what's going to come inside that function will not be X.
+
+[Simon Leonard] 13:15:29
+Right, it will be, like, a vector of Q1, 2, 3, 4, 5, 6. That's what we want.
+
+[Simon Leonard] 13:15:34
+And then we're going to have to work on, like, what does… how to build these functions. And obviously, these functions will be highly dependent on the kind of robots we're dealing with.
+
+[Simon Leonard] 13:15:43
+And we're going to look at this, uh, next lecture. I'm going to start with this slide here.
+
+[Simon Leonard] 13:15:48
+Look at… first thing is that we have. a frame at the base, and we have the frame of the tool, and we have a whole bunch of joints.
+
+[Simon Leonard] 13:15:55
+So the process for doing this will be, let's put frames into lots of different places.
+
+[Simon Leonard] 13:16:01
+and tried to find out how one joint affect one aspect of the motion. The other joint, another joint, will affect a different aspect of the.
+
+[Simon Leonard] 13:16:10
+motion, the rigid body motion between two friends. So it's kind of going to be a recursive process.
+
+[Simon Leonard] 13:16:15
+And we're going to find that out. We'll start here on Thursday.
+
+[Simon Leonard] 13:16:19
+Alright, so I hope this wasn't too bad. It should be in person on Thursday.
+
+[Simon Leonard] 13:16:24
+Um, so we'll see you, uh, I'll see you there at, uh… Anyway, at home, on the Homewood campus.
+
+[Ogedi Duruaku] 13:16:38
+Professor? Sorry, do you mind repeating what you said about, um.
+
+[Simon Leonard] 13:16:39
+Yep, go ahead.
+
+[Ogedi Duruaku] 13:16:44
+E3 equals to E1 cross E2. the last part of, like, that page.
+
+[Simon Leonard] 13:16:47
+Right, right, right. Okay, uh, yeah, I can do that. Okay.
+
+[Simon Leonard] 13:16:53
+So, actually.
+
